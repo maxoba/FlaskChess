@@ -1,9 +1,6 @@
 name: CI/CD Pipeline
 
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request ]
 
 jobs:
   build:
@@ -24,7 +21,11 @@ jobs:
     needs: build
     steps:
     - name: Deploy to production
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }} 
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         docker-compose down
-        docker-compose up -d
-
+        docker-compose up -d 
