@@ -14,6 +14,7 @@ jobs:
       run: |
           sudo pip install -r requirements.txt
           python -m pip install --upgrade pip
+          docker-compose build
 
 
     - name: Build Docker image
