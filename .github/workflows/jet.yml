@@ -24,7 +24,7 @@ jobs:
     needs: build
     steps:
     - name: Deploy to production
-      uses: appleboy/ssh-action@master
+      run:  |
 
     - name: ssh
       uses: appleboy/ssh-action@master
