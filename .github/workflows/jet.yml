@@ -30,6 +30,6 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }} 
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
-        run: |
+        script: |
           sudo docker-compose up
           docker-compose up -d 
