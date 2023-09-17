@@ -24,7 +24,7 @@ jobs:
     needs: build
     steps:
     - name: Deploy to production
-      run:  docker-compose build
+      uses: appleboy/ssh-action@master
 
     - name: ssh
       uses: appleboy/ssh-action@master
