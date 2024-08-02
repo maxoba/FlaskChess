@@ -26,9 +26,9 @@ jobs:
     - name: Deploy to production
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.SSH_HOST }}
+        host: ${{ secrets.SECRET_KEY }}
         username: ${{ secrets.SSH_USERNAME }} 
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        key: ${{ secrets.ACCESS_KEY}}
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd /home/ubuntu/FlaskChess
