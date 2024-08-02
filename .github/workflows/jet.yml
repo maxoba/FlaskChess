@@ -29,7 +29,6 @@ jobs:
         host: ${{ secrets.SECRET_KEY }}
         username: ${{ secrets.SSH_USERNAME }} 
         key: ${{ secrets.ACCESS_KEY}}
-        port: ${{ secrets.SSH_PORT }}
         script: |
           cd /home/ubuntu/FlaskChess
           sudo docker-compose up -d 
