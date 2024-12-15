@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from chess_engine import Engine
+from chess_engine import *
 
 app = Flask(__name__)
 
